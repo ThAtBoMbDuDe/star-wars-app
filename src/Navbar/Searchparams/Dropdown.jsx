@@ -1,52 +1,21 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 
 const Dropdown = (props) => {
   
-  const {searchField, setField, setData} = props
+  const {searchField, setField, setData, setValue} = props;
 
-  const [ display, setDisplay ] = useState('none')
+  const [ display, setDisplay ] = useState('none');
 
-
-  const endpoint = searchField.toLowerCase()
-  console.log(endpoint)
-
-
-
+  const endpoint = searchField.toLowerCase();  
   
-    const fetchData = async () => {
-       const res = await fetch(`https://swapi.dev/api/${endpoint}/`);
+  const fetchData = async () => {
+      const res = await fetch(`https://swapi.dev/api/${endpoint}/`);
       
-       const json = await res.json();
+      const json = await res.json();
 
-       setData(json);
-    }
-  
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-  
-    // const fetchData = () => {
-    //    fetch(`https://swapi.dev/api/${endpoint}/`)
-    //    .then((res) => {
-    //     return res.json();
-    //    })
-    //    .then((data) => {
-    //     setData(data)
-    //    })
-    // }
+      setData(json);
+  };
       
    const handleHover = () => {
     if(display=== 'none'){
@@ -54,19 +23,21 @@ const Dropdown = (props) => {
     }else {
       setDisplay('none')
     }
-  }
+  };
 
   const handleClick = (click) => {
     setField(click.target.innerHTML);
-  }
+  };
 
-
+  const updateValue = (event) => {
+    setValue(event.target.value)
+  };
 
 
   return (
     <div>
       <div>Search {searchField}...</div>
-      <input type="text" placeholder={searchField}/>
+      <input type="text" onChange={updateValue} placeholder={searchField}/>
       <button onClick={handleHover}>Click Me</button>      
       <div style={{display:display}}>
         <div onClickCapture={handleClick} onClick={fetchData}>
