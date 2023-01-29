@@ -46,15 +46,15 @@ const Cards = (props) => {
 
     
     const passingData = logging()
-    console.log(passingData)
+    
 
   return (
     <div>
-      {searchField === "People" && passingData && <Peoplecards passingData={passingData}/>}
-      {searchField === "Planets" && passingData && <Planetcards passingData={passingData}/>}
-      {searchField === "Starships" && passingData && <Starshipcards passingData={passingData}/>}
-      {searchField === "Vehicles" && passingData && <Vehiclecards passingData={passingData}/>}
-      {searchField === "Species" && passingData && <Speciescards passingData={passingData}/>}
+      {searchField === "People" && passingData && searchValue && <Peoplecards passingData={passingData}/>}
+      {searchField === "Planets" && passingData && searchValue && <Planetcards passingData={passingData}/>}
+      {searchField === "Starships" && passingData && searchValue && <Starshipcards passingData={passingData}/>}
+      {searchField === "Vehicles" && passingData && searchValue && <Vehiclecards passingData={passingData}/>}
+      {searchField === "Species" && passingData && searchValue && <Speciescards passingData={passingData}/>}
     </div>
   )
 }

@@ -14,9 +14,9 @@ function App() {
 
 
   return (
-    <div>
-      <Search searchField={searchField} setField={setField} setData={setData} setValue={setValue}/>
-      {dataArr && <Cards searchField={searchField} searchValue={searchValue} dataArr={dataArr}/>}
+    <div className='webpage'>
+      <Search searchField={searchField} setField={setField} setData={setData} setValue={setValue} searchValue={searchValue}/>
+      {dataArr && <Cards searchField={searchField} dataArr={dataArr} searchValue={searchValue}/>}
     </div>
   );
 }

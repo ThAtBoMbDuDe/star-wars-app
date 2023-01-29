@@ -1,0 +1,22 @@
+.itemCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: aliceblue;
+  width: 13%;
+  height: 60%;
+  gap: 0px;
+  border-radius: 40px;
+}
+
+.itemName {
+  margin-top: -1px;
+  
+}
+
+.dataTitle {
+  margin-bottom: -20px;
+  margin-top: -1px;
+}

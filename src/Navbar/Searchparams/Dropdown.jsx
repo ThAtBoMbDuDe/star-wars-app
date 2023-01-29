@@ -1,16 +1,17 @@
 import { useState } from 'react';
+import './Dropdown.scss';
 
 
 const Dropdown = (props) => {
   
-  const {searchField, setField, setData, setValue} = props;
+  const {searchField, setField, setData, setValue, searchValue} = props;
 
   const [ display, setDisplay ] = useState('none');
 
   const endpoint = searchField.toLowerCase();  
   
   const fetchData = async () => {
-      const res = await fetch(`https://swapi.dev/api/${endpoint}/`);
+      const res = await fetch(`https://swapi.dev/api/${endpoint}/?search=${searchValue}`);
       
       const json = await res.json();
 
@@ -36,27 +37,27 @@ const Dropdown = (props) => {
 
   return (
     <div>
-      <div>Search {searchField}...</div>
-      <input type="text" onChange={updateValue} placeholder={searchField}/>
-      <button onClick={handleHover}>Click Me</button>      
-      <div style={{display:display}}>
-        <div onClickCapture={handleClick} onClick={fetchData}>
+      <input type="text" onChange={updateValue} onKeyUp={fetchData} placeholder={searchField}/>
+      <button onClick={handleHover}><span>Search {searchField}...</span></button>      
+      <div className='listHolder' style={{display:display}}>
+        <div className='listItem' onClickCapture={handleClick}>
           People
         </div>
-        <div onClickCapture={handleClick} onClick={fetchData}>
+        <div className='listItem' onClickCapture={handleClick}>
           Planets
         </div>
-        <div onClickCapture={handleClick} onClick={fetchData}>
+        <div className='listItem' onClickCapture={handleClick}>
           Starships
         </div>
-        <div onClickCapture={handleClick} onClick={fetchData}>
+        <div className='listItem' onClickCapture={handleClick}>
          Vehicles
         </div>
-        <div onClickCapture={handleClick} onClick={fetchData}>
+        <div className='listItem' onClickCapture={handleClick}>
           Species
         </div>
       </div>
     </div>
+    
   )
 }
 
