@@ -3,7 +3,7 @@ button {
   cursor: pointer;
   border: none;
   padding: 0.5rem 1rem;
-  margin: 0;
+  margin-left: 5px;
   font-family: inherit;
   font-size: inherit;
   position: relative;
@@ -60,6 +60,11 @@ button {
 font-size: x-large;
 font-weight: 450;
 cursor: pointer;
+
+ }
+
+ .listItem {
+  color: azure;
  }
 
 .listItem:hover {

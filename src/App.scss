@@ -1,3 +1,12 @@
+*{
+  overflow: hidden;
+}
 .webpage {
+  background-image: url("https://wallpapertag.com/wallpaper/full/f/d/1/367010-cool-death-star-wallpaper-3840x2160-for-htc.jpg");
   padding: .5%;
+  height: 100vh;
+  width: 100vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
