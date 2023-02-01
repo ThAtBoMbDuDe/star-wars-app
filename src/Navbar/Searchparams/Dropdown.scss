@@ -2,15 +2,15 @@ button {
   outline: none;
   cursor: pointer;
   border: none;
-  padding: 0.5rem 1rem;
+  padding: 0.2rem 0.5rem;
   margin-left: 5px;
   font-family: inherit;
   font-size: inherit;
   position: relative;
   display: inline-block;
-  letter-spacing: 0.07rem;
-  font-weight: 700;
-  font-size: 16px;
+  letter-spacing: 0.02rem;
+  font-weight: 600;
+  font-size: 12px;
   border-radius: 500px;
   overflow: hidden;
   background: #66ff66;
@@ -51,8 +51,8 @@ button {
  }
 
  input {
-  font-size: x-large;
-  font-weight: 400;
+  font-size: medium;
+  font-weight: 200;
   padding: .1%;
  }
 
@@ -69,4 +69,9 @@ cursor: pointer;
 
 .listItem:hover {
   color: #66ff66;
+}
+
+
+@media screen and (min-width: 768px){
+  
 }
