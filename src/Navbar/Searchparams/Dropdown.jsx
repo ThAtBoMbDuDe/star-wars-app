@@ -34,25 +34,28 @@ const Dropdown = (props) => {
     setValue(event.target.value)
   };
 
+  const resetValue = () => {
+    setValue('')
+  }
 
   return (
     <div>
       <input type="text" onChange={updateValue} onKeyUp={fetchData} placeholder={searchField}/>
       <button onClick={handleHover}><span>Search {searchField}...</span></button>      
       <div className='listHolder' style={{display:display}}>
-        <div className='listItem' onClickCapture={handleClick}>
+        <div className='listItem' onClick={resetValue} onClickCapture={handleClick}>
           People
         </div>
-        <div className='listItem' onClickCapture={handleClick}>
+        <div className='listItem' onClick={resetValue} onClickCapture={handleClick}>
           Planets
         </div>
-        <div className='listItem' onClickCapture={handleClick}>
+        <div className='listItem' onClick={resetValue} onClickCapture={handleClick}>
           Starships
         </div>
-        <div className='listItem' onClickCapture={handleClick}>
+        <div className='listItem' onClick={resetValue} onClickCapture={handleClick}>
          Vehicles
         </div>
-        <div className='listItem' onClickCapture={handleClick}>
+        <div className='listItem' onClick={resetValue} onClickCapture={handleClick}>
           Species
         </div>
       </div>
